@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="out.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-100 via-indigo-50 to-sky-100 p-6 font-[Inter]">
+
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="backdrop-blur-xl bg-white/30 border border-white/40 rounded-3xl p-5 mb-8 shadow-xl">
+
+            <div class="flex flex-wrap items-center justify-between gap-3">
+
+                <div class="flex items-center gap-2">
+                    <img src="img/28c04ddd05d643835bc5ee5cb4ea5fca-removebg-preview (4).png" alt="NeuroCare Logo"
+                        class="w-14">
+                    <h1 class="text-2xl font-semibold tracking-wide" style="font-family:'Playfair Display',serif;">
+                        NeuroCare
+                    </h1>
+                </div>
+
+                <div class="flex items-center gap-2 md:gap-4">
+
+                    <div class="relative hidden md:block">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="search" placeholder="Search..."
+                            class="w-[280px] rounded-xl border border-white/40 bg-white/50 py-3 pl-11 pr-4 outline-none focus:ring-2 focus:ring-[#4F6FE8]/30">
+                    </div>
+
+                    <button id="bell"
+                        class="w-11 h-11 rounded-xl bg-white/40 backdrop-blur-xl border border-white/40 flex items-center justify-center shrink-0">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <button id="logOutbtn"
+                        class="w-11 md:w-24 h-11 rounded-xl capitalize hover:text-[#4F6FE8] hover:bg-amber-50 bg-[#4F6FE8] text-white flex items-center justify-center font-semibold shrink-0">
+                        <i class="fa-solid fa-arrow-right-from-bracket md:hidden"></i>
+                        <span class="hidden md:inline">log out</span>
+                    </button>
+
+                    <button id="editbtn"
+                        class="w-11 md:w-24 h-11 rounded-xl capitalize hover:text-[#4F6FE8] hover:bg-amber-50 bg-[#4F6FE8] text-white flex items-center justify-center font-semibold shrink-0">
+                        <i class="fa-solid fa-pen md:hidden"></i>
+                        <span class="hidden md:inline">edit profile</span>
+                    </button>
+
+                    <button id="deletbtn"
+                        class="w-11 md:w-24 h-11 rounded-xl capitalize hover:text-[#4F6FE8] hover:bg-amber-50 bg-[#4F6FE8] text-white flex items-center justify-center font-semibold shrink-0">
+                        <i class="fa-solid fa-trash md:hidden"></i>
+                        <span class="hidden md:inline">delet</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Welcome Card -->
+        <div class="bg-white/20 backdrop-blur-xl border border-white/40 rounded-[32px] p-8 shadow-xl mb-8">
+
+            <div class="flex justify-between items-center">
+
+                <div>
+
+                    <span class="px-4 py-2  text-[#4F6FE8] text-sm font-medium">
+                        Patient Dashboard
+                    </span>
+
+                    <h2 class="text-4xl font-bold text-slate-800 mt-5">
+                        Hello, <span id="userName">Zahra</span>
+                    </h2>
+
+                    <p class="text-slate-600 mt-2">
+                        Welcome back to NeuroCare. Here's an overview of your health profile.
+                    </p>
+
+                </div>
+
+                <div
+                    class="hidden md:flex w-24 h-24 rounded-3xl bg-white/30 backdrop-blur-xl border border-white/40 items-center justify-center">
+
+                    <i class="fa-solid fa-heart-pulse text-4xl text-[#4F6FE8]"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+
+            <!-- Patient Profile -->
+            <div class="bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-6 shadow-xl">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div class="w-14 h-14 rounded-2xl overflow-hidden">
+                        <img id="patientAvatar" src="" class="w-full h-full object-cover" alt="Doctor Avatar">
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-semibold text-lg">
+                            Patient Profile
+                        </h3>
+
+                        <p class="text-sm text-slate-500">
+                            Personal information
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="space-y-4">
+
+                    <div>
+                        <p class="text-slate-500 text-sm">Full Name</p>
+                        <p id="nameProfile" class="font-medium">Zahra Azizi</p>
+                    </div>
+
+                    <div>
+                        <p class="text-slate-500 text-sm">Email</p>
+                        <p id="emailProfile" class="font-medium">zahra@gmail.com</p>
+                    </div>
+
+                    <div>
+                        <p class="text-slate-500 text-sm">Disease</p>
+                        <p id="disease" class="font-medium">Schizophrenia</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Doctor -->
+            <div class="bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-6 shadow-xl">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center">
+
+                        <img src="" id="doctortAvatar" class="w-14 h-14 rounded-2xl object-cover" alt="">
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-semibold text-lg">
+                            Assigned Doctor
+                        </h3>
+
+                        <p class="text-sm text-slate-500">
+                            Healthcare specialist
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <h4 id="doctorName" class="text-xl font-semibold mb-2">
+                    Dr. Sarah Johnson
+                </h4>
+
+                <p id="doctorSpeciality" class="text-slate-600">
+                    Psychiatrist
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Disease Overview -->
+        <div class="bg-white/20 backdrop-blur-xl border border-white/40 rounded-3xl p-6 shadow-xl mb-6">
+
+            <h3 class="text-xl font-semibold mb-4">
+                Disease Overview
+            </h3>
+
+            <p id="diseaseInfo" class="text-slate-600 leading-relaxed">
+
+                Schizophrenia is a chronic mental health condition that affects
+                perception, thinking, emotions and behaviour.
+
+            </p>
+
+        </div>
+
+
+
+        <div id="editModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+
+            <div class="bg-white p-6 rounded-xl w-[400px]">
+
+                <h2 class="text-xl font-bold mb-4">
+                    Edit Patient
+                </h2>
+
+                <input id="editName" type="text" class="w-full border p-2 mb-3 rounded" placeholder="Fullname">
+
+                <input id="editEmail" type="email" class="w-full border p-2 mb-3 rounded" placeholder="Email">
+
+                <select id="editDisease" class="w-full border p-2 mb-3 rounded">
+                    <option>Alzheimer's Disease</option>
+                    <option>Parkinson's Disease</option>
+                    <option>Epilepsy</option>
+                    <option>Schizophrenia</option>
+                    <option>Multiple Sclerosis</option>
+
+
+                    <!-- <option value="Alzheimer's Disease">Alzheimer's Disease</option>
+                    <option value="Parkinson's Disease">Parkinson's Disease</option>
+                    <option value="Schizophrenia">Schizophrenia</option> -->
+
+                </select>
+
+                <div class="flex gap-3">
+
+                    <button id="saveEdit"
+                        class="bg-[#4F6FE8] hover:text-amber-50 hover:bg-gray-400 text-white px-4 py-2 rounded">
+                        Save
+                    </button>
+
+                    <button id="closeModal"
+                        class="bg-gray-400 hover:bg-[#4F6FE8] hover:text-amber-50 text-white px-4 py-2 rounded">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="js/js.cookie.min.js"></script>
+<script>
+    const userName = document.getElementById('userName')
+    const nameProfile = document.getElementById('nameProfile')
+    const emailProfile = document.getElementById('emailProfile')
+    const disease = document.getElementById('disease')
+    const doctorName = document.getElementById('doctorName')
+    const doctorSpeciality = document.getElementById('doctorSpeciality')
+    const diseaseInfo = document.getElementById('diseaseInfo')
+    const patientId = sessionStorage.getItem('currentPatientId')
+    const patientAvatar = document.getElementById('patientAvatar')
+    const doctortAvatar = document.getElementById('doctortAvatar')
+    const logOutbtn = document.getElementById('logOutbtn')
+    const deletbtn = document.getElementById('deletbtn')
+
+
+    const editModal = document.getElementById("editModal")
+    const editName = document.getElementById("editName")
+    const editEmail = document.getElementById("editEmail")
+    const editDisease = document.getElementById("editDisease")
+    const saveEdit = document.getElementById("saveEdit")
+    const closeModal = document.getElementById("closeModal")
+    const editbtn = document.getElementById('editbtn')
+
+
+    if (!patientId) {
+        location.assign('index.html')
+    } else {
+        fetchDashboardData(patientId)
+    }
+
+    function fetchDashboardData(patientId) {
+        const patientUrl = `https://6a3d05e1d8e212699e23457f.mockapi.io/api/patients/${patientId}`;
+        const doctorsUrl = `https://6a3d05e1d8e212699e23457f.mockapi.io/api/doctors`;
+
+        Promise.all([
+            fetch(patientUrl).then(res => res.json()),
+            fetch(doctorsUrl).then(res => res.json())
+        ]).then(([patient, doctors]) => {
+            const assignedDoctor = doctors.find(d => d.disease === patient.disease);
+            nameProfile.innerHTML = patient.fullname
+            emailProfile.innerHTML = patient.email
+            disease.innerHTML = patient.disease
+            patientAvatar.src = patient.avatar
+            userName.innerHTML = patient.fullname
+
+
+            if (assignedDoctor) {
+                doctorName.innerHTML = assignedDoctor.doctorName
+                doctorSpeciality.innerHTML = assignedDoctor.speciality
+                diseaseInfo.innerHTML = assignedDoctor.description
+                doctortAvatar.src = assignedDoctor.avatar
+            } else {
+                doctorName.innerHTML = "No doctor was found for this disease."
+            }
+
+
+        });
+    }
+    logOutbtn.addEventListener('click', () => {
+        Cookies.remove('email')
+        Cookies.remove('password')
+        sessionStorage.removeItem('currentPatientId')
+        location.assign('index.html')
+        console.log(logOutbtn)
+
+    })
+    function myDel() {
+        if (confirm('sure?')) {
+            fetch(`https://6a3d05e1d8e212699e23457f.mockapi.io/api/patients/${patientId}`, {
+                method: 'DELETE',
+            }).then(res => {
+                if (res.ok) {
+                    return res.json()
+                }
+            }).then(data => {
+                alert('you delet your account')
+                Cookies.remove('email')
+                Cookies.remove('password')
+                sessionStorage.removeItem('currentPatientId')
+                location.assign('index.html')
+            }).catch(error => {
+                alert('some thing wrong')
+
+
+            })
+
+        }
+    }
+    deletbtn.addEventListener('click', () => {
+        myDel()
+    })
+    editbtn.addEventListener('click', () => {
+        editName.value = nameProfile.innerText;
+        editEmail.value = emailProfile.innerText;
+        editDisease.value = disease.innerText;
+        editModal.classList.remove('hidden')
+
+    })
+    closeModal.addEventListener('click', () => {
+        editModal.classList.add('hidden')
+
+    })
+    saveEdit.addEventListener('click', () => {
+        const patientid = sessionStorage.getItem("currentPatientId");
+        const updateuser = {
+            fullname: editName.value,
+            email: editEmail.value,
+            disease: editDisease.value
+
+        }
+        fetch(`https://6a3d05e1d8e212699e23457f.mockapi.io/api/patients/${patientId}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(updateuser)
+        }).then(res => res.json()).then(data => {
+            editModal.classList.add('hidden')
+            console.log(data)
+
+            nameProfile.innerText = data.fullname
+            emailProfile.innerText = data.email
+            disease.innerText = data.disease
+            userName.innerText = data.fullname
+            fetchDashboardData(patientId);
+
+        }).catch(error => {
+            console.log(error);
+
+        })
+
+    })
+
+
+
+</script>
+
+</html>
